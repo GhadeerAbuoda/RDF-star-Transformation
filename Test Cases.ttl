@@ -1,0 +1,105 @@
+@prefix ex: <http://example.org/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns> .
+
+#case 1 
+    ex:alice ex:meets ex:bob .
+
+#case 2
+  #case 2.1:
+    ex:Sam ex:mentor ex:Lee .
+    ex:mentor rdfs:label "project supervisor" .
+    ex:mentor ex:name "mentor's name" .
+
+#case 2.2:
+    ex:Martin ex:mentorJoe ex:Joe .
+    ex:mentorJoe ex:alias ex:teacher . 
+
+#case 2.3:
+    ex:Jan ex:supervise ex:Leo .
+    ex:supervise rdfs:subPropertyOf ex:administer .
+
+#case 2.4:
+    ex:Tom ex:friend ex:Chris .
+    ex:friend rdf:type ex:relation .
+
+#case 3
+
+#case 3.1:
+ex:book  ex:publish_date "1963-03-22"^^xsd:date .
+ex:book  ex:pages        "100"^^xsd:integer .
+ex:book  ex:cover        20 .
+ex:book  ex:index        "55" .
+
+#case 3.2:
+ex:book  ex:Englishtitle "Book"@en .
+ex:book  ex:title "Bog"@da .
+
+#case 4
+ex:List1 ex:contents ("one" "two" "three") .
+
+#case 5
+ex:bob ex:nationality _:c .
+_:c a  ex:Person .
+
+#case 6
+ex:Graph1 { ex:Monica ex:name "Monica" .      
+            ex:Monica ex:homepage ex:Monicahompage .
+            ex:Monica ex:hasSkill ex:Management }
+       
+ex:Graph2 { ex:Monica rdf:type ex:Person .
+            ex:Monica ex:hasSkill ex:Programming }
+
+#case 7
+ex:alice  a ex:Artist .
+ex:alice  a ex:Author .
+
+#case 8
+<<ex:alice ex:likes ex:bob>> ex:certainty 0.5 .
+
+#case 9
+<<ex:Mark ex:age 28>> ex:certainty 1 .
+
+#case 10
+ex:bobhomepage ex:source <<ex:mainPage ex:writer ex:alice>> .
+
+#case 11
+
+#case 11.1:
+<<ex:mainPage ex:writer ex:alice>> ex:source ex:bobhomepage .
+
+#case 11.2:
+<<ex:alice ex:friend ex:bob>> ex:mentionedBy ex:Alex .
+  ex:Alex  ex:age    25 . 
+
+#case 12
+
+#case 12.1:
+<<ex:mainPage ex:writer ex:alice>> rdf:type ex:bobhomepage .
+
+#case 12.2:
+<<ex:lara rdf:type ex:writer>> ex:owner ex:Journal .
+
+#case 13
+<<<<ex:Steve ex:position "CEO">> ex:mentionedBy ex:book>> ex:source ex:journal .
+
+#case 14
+
+#case 14.1:
+ex:college_page ex:subject "Info_Page" ; 
+                ex:subject "aau_page" .
+
+#case 14.2:
+<<ex:Mary ex:likes ex:Matt>> ex:certainty 0.5 .
+<<ex:Mary ex:likes ex:Matt>> ex:certainty 1 .
+
+#case 15
+
+#case 15.1:
+<<ex:Mary ex:likes ex:Matt>> ex:certainty 0.5 .
+<<ex:Mary ex:likes ex:Matt>> ex:source "text" .
+
+#case 15.2:
+<<ex:Mary ex:likes ex:Matt>> ex:certainty 0.5 .
+  ex:Mary ex:likes ex:Matt .
