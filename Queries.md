@@ -51,7 +51,7 @@ MATCH (n) where n.uri="http://example.com/Matt" return n
 ```
 -------
 
-/* Cypher: Return nodes with uri = http://example.com/Alex */
+###### Case 11 : Return nodes with uri = http://example.com/Alex
 ```
 MATCH (n) where n.uri="http://example.com/Alex" return n
 ```
