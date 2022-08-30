@@ -3,7 +3,7 @@
 This repository contains the scripts and the code for analyzing the transforming RDF and RDF-star into property graphs.
 
 ### Project & Libraries:
-- [neosemantics](https://github.com/neo4j-labs/neosemantics): more details in usage can be found [here](https://neo4j.com/labs/neosemantics/).
+- [neosemantics](https://github.com/neo4j-labs/neosemantics): a well-known project to import RDF data into [Neo4J](https://neo4j.com/), implemented as a Neo4j plug-in more details on usage can be found [here](https://neo4j.com/labs/neosemantics/).
 - [RDF-star Tools](https://github.com/RDFstar/RDFstarTools) Project 
 - [RDF2PG](https://github.com/renzoar/rdf2pg)
 
