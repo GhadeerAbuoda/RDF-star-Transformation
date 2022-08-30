@@ -1,23 +1,27 @@
 # Example Cypher Queries to check property graphs in Neo4j
 
-/* Case 2 */
-
-/* Cypher: Return RDF resource (ex:mentor) if it is an edge (i.e., relation) */
+###### Case 2: Return RDF resource (ex:mentor) if it is an edge (i.e., relation)
 ```
   MATCH p=()-[r:mentor]->() RETURN p
 ```
-/* Cypher: Return RDF resource (ex:mentor) if it is a node with url property */
+###### Case 2: Return RDF resource (ex:mentor) if it is a node with url property 
+```
 MATCH (n) where n.uri="http://example.com/mentor" return n
+```
 
-/* Cypher: Return both representations of the RDF resource (ex:mentor) */
+######  Case 2: Return both representations of the RDF resource (ex:mentor)
+```
 MATCH (n) where n.uri="http://example.com/mentor"  return 
 DISTINCT "node" AS entity, n.uri  AS uri 
 UNION ALL
 MATCH p=()-[r:mentor]->() 
 RETURN DISTINCT "relationship" 
 AS entity, type(r) as uri 
+```
 
 /* Cypher: Return property (name) for the RDF resource (ex:mentor) */
+
+```
 MATCH (n) WHERE EXISTS(n.name) RETURN DISTINCT "node" 
 AS entity, n.name AS name 
 
@@ -25,7 +29,7 @@ UNION ALL
 
 MATCH ()-[r]-() WHERE EXISTS(r.name) RETURN DISTINCT "relationship" 
 AS entity, r.name AS name 
-
+```
 -------
 /* Cypher: Return property key (certainty) that represents the outer predicate of RDF-star triple in Case 8 */
 MATCH (n) WHERE EXISTS(n.certainty) RETURN DISTINCT "node" as entity, 
