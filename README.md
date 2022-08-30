@@ -4,7 +4,7 @@ This repository contains the scripts and the code for analyzing the transforming
 
 ### Project & Libraries:
 - [neosemantics](https://github.com/neo4j-labs/neosemantics): more details in usage can be found [here](https://neo4j.com/labs/neosemantics/).
-- [RDF-star Tools](https://github.com/RDFstar/RDFstarTools) Project: 
+- [RDF-star Tools](https://github.com/RDFstar/RDFstarTools) Project 
 - [RDF2PG](https://github.com/renzoar/rdf2pg)
 
 ### Files: 
