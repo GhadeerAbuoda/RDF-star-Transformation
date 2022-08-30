@@ -19,7 +19,7 @@ RETURN DISTINCT "relationship"
 AS entity, type(r) as uri 
 ```
 
-/* Cypher: Return property (name) for the RDF resource (ex:mentor) */
+######  Case 2: Return property (name) for the RDF resource (ex:mentor)
 
 ```
 MATCH (n) WHERE EXISTS(n.name) RETURN DISTINCT "node" 
@@ -40,7 +40,7 @@ MATCH ()-[r]-() WHERE EXISTS(r.certainty) RETURN DISTINCT "relationship"
 AS entity, r.certainty AS certainty 
 ```
 -------
-/* Cypher: Return the relation (ex:likes) of the embedded RDF-star */
+###### Case 8: Return the relation (ex:likes) of the embedded RDF-star
 ```
 MATCH p=()-[r:likes]->() RETURN p 
 ```
@@ -51,18 +51,18 @@ MATCH (n) where n.uri="http://example.com/Matt" return n
 ```
 -------
 
-###### Case 11 : Return nodes with uri = http://example.com/Alex
+###### Case 11: Return nodes with uri = http://example.com/Alex
 ```
 MATCH (n) where n.uri="http://example.com/Alex" return n
 ```
 ------
- ###### Cypher return all property keys of (likes) relation
+ ###### Case 14: Return all property keys of (likes) relation
  
  ```
  MATCH p=()-[r:likes]->() RETURN keys(r)
  ```
  
-###### Cypher return all property (certainty) of (likes) relation  
+###### Case 14: Return all property (certainty) of (likes) relation  
  
  ```
  MATCH (n1:Resource)-[r:likes]-(n2:Resource) return r.certainty 
