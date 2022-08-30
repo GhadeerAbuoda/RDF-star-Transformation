@@ -1,4 +1,6 @@
-# Cypher Queries to check property graphs in Neo4j
+# Example Cypher Queries to check property graphs in Neo4j
+
+/* Case 2 */
 
 /* Cypher: Return RDF resource (ex:mentor) if it is an edge (i.e., relation) */
 MATCH p=()-[r:mentor]->() RETURN p
