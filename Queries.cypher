@@ -3,8 +3,9 @@
 /* Case 2 */
 
 /* Cypher: Return RDF resource (ex:mentor) if it is an edge (i.e., relation) */
-MATCH p=()-[r:mentor]->() RETURN p
-
+```
+  MATCH p=()-[r:mentor]->() RETURN p
+```
 /* Cypher: Return RDF resource (ex:mentor) if it is a node with url property */
 MATCH (n) where n.uri="http://example.com/mentor" return n
 
